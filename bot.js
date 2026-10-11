@@ -62,7 +62,29 @@ client.on('message', async (msg) => {
         } catch (error) {
             console.error('[-] Error interacting with status update:', error);
         }
+    }    // Command Menu Feature
+    if (msg.body === '.menu') {
+        const menuText = `
+🔥 *Black Sherif bot Menu* 🔥
+
+Here are the available features and commands:
+
+📌 *General Commands:*
+• \`.menu\` - Display this help options list.
+• \`.ping\` - Test if the bot is awake and responsive.
+
+⚙️ *Active Background Features:*
+• ✅ *Auto-Status Viewer:* Active (Viewing text/media statuses)
+• ✅ *Auto-Status Liker:* Active (Reacting with ❤️)
+• 🛡️ *Anti-Ban Delay Manager:* Active (15s - 45s human-like pacing)
+
+_Powered by Black Sherif Automation_
+        `;
+        
+        await msg.reply(menuText);
+        console.log(`[Command] Sent Black Sherif bot Menu layout to ${msg.author || msg.from}`);
     }
+
 });
 
 // Start the client engine
